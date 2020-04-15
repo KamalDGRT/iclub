@@ -34,7 +34,7 @@ include('include/functions.php');
                     </div>
                     <div class="row">
                         <?php myCard("my-profile.php", "myText", "My Profile", "card shadow border-left-success py-2", "card-body", "far fa-sticky-note fa-2x text-gray-300"); ?>
-                        <?php myCard("form1.php", "myText", "Fill the Microprocessor Lab Form", "card shadow border-left-primary py-2", "card-body", "far fa-sticky-note fa-2x text-gray-300"); ?>
+                        <?php myCard("#", "myText", "Time Table", "card shadow border-left-primary py-2", "card-body", "far fa-sticky-note fa-2x text-gray-300"); ?>
                         <?php myCard("change-email.php", "myText", "Update Email Address", "card shadow border-left-danger py-2", "card-body", "far fa-sticky-note fa-2x text-gray-300"); ?>
                     </div>
                 </div>
