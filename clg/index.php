@@ -2,28 +2,11 @@
 session_start();
 include("include/config.php");
 if (isset($_POST['submit'])) {
-    $ret1 = mysqli_query($con, "SELECT * FROM users WHERE reg_no='" . $_POST['username'] . "' and password='" . md5($_POST['password']) . "'");
-    $num1 = mysqli_fetch_array($ret1);    
 
-    $ret2 = mysqli_query($con, "SELECT * FROM namelist WHERE reg_no='" . $_POST['username'] . "' and password='" . md5($_POST['password']) . "'");
-    $num2 = mysqli_fetch_array($ret2);
-
-    $ret3 = mysqli_query($con, "SELECT * FROM users WHERE email='" . $_POST['username'] . "' and password='" . md5($_POST['password']) . "'");
-    $num3 = mysqli_fetch_array($ret3);
-    
-    $ret4 = mysqli_query($con, "SELECT * FROM namelist WHERE email='" . $_POST['username'] . "' and password='" . md5($_POST['password']) . "'");
-    $num4 = mysqli_fetch_array($ret4);
-    
-    if ($num1 > 0) {
-        $num = $num1;
-    } else if ($num2 > 0) {
-        $num = $num2;
-    } else if ($num3 > 0) {
-        $num = $num3;
-    } else if ($num4 > 0) {
-        $num = $num4;
-    }
-    if ($num1 > 0 || $num2 > 0 || $num3 > 0 || $num4 > 0) {
+    $ret = mysqli_query($con, "SELECT * FROM users WHERE email='" . $_POST['username'] . "' and password='" . md5($_POST['password']) . "'");
+    $num = mysqli_fetch_array($ret);
+            
+    if ($num > 0) {
         $_SESSION['login'] = $_POST['username'];
         $_SESSION['id'] = $num['id'];
         $_SESSION['fullName'] = $num['fullName'];
