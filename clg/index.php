@@ -81,7 +81,12 @@ if (isset($_POST['submit'])) {
                         </legend>
                         <p>
                             Please enter your email and password to log in.<br />
-                            <span style="color:red;"></span>
+                            <span style="color:red;">
+                                <?php if(isset($_SESSION['errmsg'])) { 
+                                    echo htmlentities($_SESSION['errmsg']);
+                                    } 
+                                ?>
+                            </span>                            
                         </p>
                         <div class="form-group">
                             <span class="input-icon">
