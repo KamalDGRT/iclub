@@ -5,13 +5,11 @@ if (isset($_POST['submit'])) {
 
     $ret = mysqli_query($con, "SELECT * FROM users WHERE email='" . $_POST['username'] . "' and password='" . md5($_POST['password']) . "'");
     $num = mysqli_fetch_array($ret);
-            
     if ($num > 0) {
         $_SESSION['login'] = $_POST['username'];
         $_SESSION['id'] = $num['id'];
-        $_SESSION['fullName'] = $num['fullName'];
         $_SESSION['role'] = $num['role'];
-        $_SESSION['regno'] = $num['reg_no'];
+        $_SESSION['fullName'] = $num['fullName'];
         $host = $_SERVER['HTTP_HOST'];
         $uip = $_SERVER['REMOTE_ADDR'];
         $status = 1;
@@ -82,11 +80,11 @@ if (isset($_POST['submit'])) {
                         <p>
                             Please enter your email and password to log in.<br />
                             <span style="color:red;">
-                                <?php if(isset($_SESSION['errmsg'])) { 
+                                <?php if (isset($_SESSION['errmsg'])) {
                                     echo htmlentities($_SESSION['errmsg']);
-                                    } 
+                                }
                                 ?>
-                            </span>                            
+                            </span>
                         </p>
                         <div class="form-group">
                             <span class="input-icon">
@@ -121,8 +119,7 @@ if (isset($_POST['submit'])) {
     <?php include('include/footer.php'); ?>
 
     <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>    
     <script src="assets/js/baguetteBox.min.js"></script>
     <script src="assets/js/theme.js"></script>
 </body>
