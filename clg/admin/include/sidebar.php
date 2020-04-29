@@ -50,6 +50,7 @@
                         <div class="bg-white border rounded py-2 collapse-inner">
                             <a class="collapse-item" href="my-profile.php">My Profile</a>
                             <a class="collapse-item" href="change-password.php">Change Password</a>
+                            <a class="collapse-item" href="user-session-logs.php">User Logs</a>
                         </div>
                     </div>
                 </div>
@@ -58,6 +59,7 @@
                     <div class="bg-white border rounded py-2 collapse-inner">
                         <a class="collapse-item" href="my-profile.php">My Profile</a>
                         <a class="collapse-item" href="change-password.php">Change Password</a>
+                        <a class="collapse-item" href="user-session-logs.php">User Logs</a>
                     </div>
                 </div>
             </li>
