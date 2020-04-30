@@ -36,7 +36,7 @@ include('include/functions.php');
                         <div class="card-body">
 
                             <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
-                                <table class="table dataTable my-0" id="depottable">
+                                <table class="table dataTable my-0" id="userlog">
                                     <thead>
                                         <?php displayTableHeadUserLogs(); ?>
                                     </thead>
@@ -64,7 +64,16 @@ include('include/functions.php');
     <script src="assets/js/jquery.dataTables.min.js"></script>
     <script src="assets/js/dataTables.bootstrap.min.js"></script>
     <script src="assets/js/theme.js"></script>
-    <script src="assets/js/depot.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#userlog').DataTable({
+                "columnDefs": [{
+                    "orderable": false,
+                    "targets": [6]
+                }]
+            });
+        });
+    </script>
 </body>
 
 </html>
