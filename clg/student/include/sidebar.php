@@ -24,11 +24,13 @@
             <li class="nav-item" role="presentation">
                 <div>
                     <a class="btn btn-link nav-link" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-1" href="#collapse-1" role="button">
-                        <i class="fas fa-sticky-note fa-2x"></i>&nbsp;<span>Forms</span>
+                        <i class="fas fa-sticky-note fa-2x"></i>&nbsp;<span>Academics</span>
                     </a>
                     <div class="collapse" id="collapse-1">
                         <div class="bg-white border rounded py-2 collapse-inner">
-                            <a class="collapse-item" href="form1.php">Mircoprocessor Lab</a>
+                            <a class="collapse-item" href="view-courses.php">Courses</a>
+                            <a class="collapse-item" href="view-meetings.php">Meetings</a>
+                            <a class="collapse-item" href="view-time-table.php">Time-table</a>
                         </div>
                     </div>
                 </div>
