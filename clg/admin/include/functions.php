@@ -40,6 +40,27 @@ function meetingStatusText($status)
     return $message;
 }
 
+function courseTypeText($status)
+{
+    $message = "";
+    if($status==2){
+        $message = "Practical";
+    } elseif($status==1) {
+        $message = "Theory";
+    }
+    return $message;
+}
+
+function courseStatusText($status)
+{
+    $message = "";
+    if($status==1){
+        $message = "Active";
+    } elseif($status==2) {
+        $message = "Removed";
+    }
+    return $message;
+}
 function PHPDay($date)
 {
     $timestamp = strtotime($date);
@@ -142,6 +163,51 @@ function displayMeetingsAdmin()
     $content .= " </tr>\n";
 
     echo $content;
+    }
+}
+
+function displayTableHeadCoursesAdmin()
+{
+    $content = "<tr class=\"text-center\">";
+    $content .=   "<th style=\"width:15%;\">S.No.</th>";
+    $content .=   "<th style=\"width:15%;\">Course&nbsp;Code</th>";
+    $content .=   "<th style=\"width:35%;\">Course&nbsp;Name</th>";
+    $content .=   "<th style=\"width:15%;\">Course&nbsp;Type</th>";
+    $content .=   "<th style=\"width:10%;\">Status</th>";
+    $content .=   "<th style=\"width:15%;\">Options</th>";
+    $content .= "</tr>\n";
+    echo $content;
+}
+
+function displayCoursesAdmin()
+{
+    global $con;
+    $sel_query = "SELECT * FROM courses";
+    $result = mysqli_query($con, $sel_query);
+    $count = 1;
+    while ($row = mysqli_fetch_assoc($result)) {
+
+    $content = "<tr class=\"text-center\">";
+    $content .=      "<td>".$count."</td>";
+    $content .=      "<td>".$row["course_code"]."</td>";
+    $content .=      "<td>".$row["course_name"]."</td>";
+    $content .=      "<td>".courseTypeText($row["course_type"])."</td>";
+    $content .=      "<td>".courseStatusText($row["status"])."</td>";
+    $content .=      "<td>";
+    $content .=          "<a href=\"#\" class=\"btn-xs tooltips\" tooltip-placement=\"top\" tooltip=\"Edit\">";
+    $content .=              "<i class=\"fa fa-eye\"></i>";
+    $content .=          "</a>&nbsp;&nbsp;&nbsp;&nbsp;";
+    $content .=          "<a href=\"#\" class=\"btn-xs tooltips\" tooltip-placement=\"top\" tooltip=\"Edit\">";
+    $content .=              "<i class=\"fa fa-edit\"></i>";
+    $content .=          "</a>&nbsp;&nbsp;&nbsp;&nbsp;";
+    $content .=          "<a href=\"#\" onClick=\"return confirm('Are you sure you want to delete?')\" class=\"btn-xs tooltips\" tooltip-placement=\"top\" tooltip=\"Remove\">";
+    $content .=              "<i class=\"fa fa-times fa fa-white\"></i>";
+    $content .=          "</a>";
+    $content .=      "</td>";
+    $content .= " </tr>\n";
+
+    echo $content;
+    $count++;
     }
 }
 ?>

@@ -27,8 +27,9 @@
                         <i class="fas fa-sticky-note fa-2x"></i>&nbsp;<span>Courses</span>
                     </a>
                     <div class="collapse" id="collapse-1">
-                        <div class="bg-white border rounded py-2 collapse-inner">                            
-                            <a class="collapse-item" href="#">View Courses</a>
+                        <div class="bg-white border rounded py-2 collapse-inner">
+                            <a class="collapse-item" href="add-course.php">Add a Course</a>
+                            <a class="collapse-item" href="view-courses.php">View Courses</a>
                         </div>
                     </div>
                 </div>
