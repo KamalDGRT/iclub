@@ -88,7 +88,7 @@ if (isset($_POST['submit'])) {
                         </p>
                         <div class="form-group">
                             <span class="input-icon">
-                                <input type="text" class="form-control" name="username" placeholder="Registration Number" required>
+                                <input type="text" class="form-control" name="username" placeholder="Email Address" required>
                                 <i class="fa fa-user"></i> </span>
                         </div>
                         <div class="form-group form-actions">

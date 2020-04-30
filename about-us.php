@@ -42,11 +42,11 @@
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-sm-6 col-lg-4">
-                        <div class="card clean-card text-center"><img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar1.png">
+                        <div class="card clean-card text-center"><img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar1.jpg">
                             <div class="card-body info">
                                 <h4 class="card-title">Kamal Sharma</h4>
                                 <p class="card-text"></p>
-                                <div class="icons"><a href="#"><i class="icon-social-facebook"></i></a><a href="#"><i class="icon-social-instagram"></i></a><a href="#"><i class="icon-social-twitter"></i></a></div>
+                            <!--    <div class="icons"><a href="#"><i class="icon-social-facebook"></i></a><a href="#"><i class="icon-social-instagram"></i></a><a href="#"><i class="icon-social-twitter"></i></a></div>  -->
                             </div>
                         </div>
                     </div>
@@ -55,7 +55,7 @@
                             <div class="card-body info">
                                 <h4 class="card-title">Supriya Sinha</h4>
                                 <p class="card-text"></p>
-                                <div class="icons"><a href="#"><i class="icon-social-facebook"></i></a><a href="#"><i class="icon-social-instagram"></i></a><a href="#"><i class="icon-social-twitter"></i></a></div>
+                            <!--    <div class="icons"><a href="#"><i class="icon-social-facebook"></i></a><a href="#"><i class="icon-social-instagram"></i></a><a href="#"><i class="icon-social-twitter"></i></a></div>  -->
                             </div>
                         </div>
                     </div>
@@ -64,7 +64,7 @@
                             <div class="card-body info">
                                 <h4 class="card-title">Anhushree</h4>
                                 <p class="card-text"></p>
-                                <div class="icons"><a href="#"><i class="icon-social-facebook"></i></a><a href="#"><i class="icon-social-instagram"></i></a><a href="#"><i class="icon-social-twitter"></i></a></div>
+                            <!--    <div class="icons"><a href="#"><i class="icon-social-facebook"></i></a><a href="#"><i class="icon-social-instagram"></i></a><a href="#"><i class="icon-social-twitter"></i></a></div>  -->
                             </div>
                         </div>
                     </div>
