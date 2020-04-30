@@ -36,7 +36,7 @@ include('include/functions.php');
                         <div class="card-body">
 
                             <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
-                                <table class="table dataTable my-0 myText myFont" id="leavestatustable">
+                                <table class="table dataTable my-0 myText myFont" id="viewtt">
                                     <thead class="h6 myFont">
                                         <tr>
                                             <th>Days</th>
@@ -46,10 +46,10 @@ include('include/functions.php');
                                             <th>4th Hour</th>
                                             <th>5th Hour</th>
                                             <th>6th Hour</th>
-                                           
                                         </tr>
                                     </thead>
                                     <tbody>
+
                                         <tr>
                                             <td><strong>MONDAY</strong></td>
                                             <td>SCS1207</td>
@@ -58,11 +58,9 @@ include('include/functions.php');
                                             <td>SEC1312</td>
                                             <td>SCS1306</td>
                                             <td>SCS1209</td>
-                                           
                                         </tr>
 
                                         <tr>
-
                                             <td><strong>TUESDAY</strong></td>
                                             <td>SMT1205</td>
                                             <td>SMT1205</td>
@@ -70,17 +68,16 @@ include('include/functions.php');
                                             <td>SEC1312</td>
                                             <td>SCS1206</td>
                                             <td>SCS1206</td>
-
                                         </tr>
+
                                         <tr>
                                             <td><strong>WEDNESDAY</strong></td>
-                                            <td>SEC4087/SCS4302</td>
-                                            <td>SEC4087/SCS4302</td>
-                                            <td>SEC4087/SCS4302</td>
+                                            <td>SEC4087&nbsp;/&nbsp;SCS4302</td>
+                                            <td>SEC4087&nbsp;/&nbsp;SCS4302</td>
+                                            <td>SEC4087&nbsp;/&nbsp;SCS4302</td>
                                             <td>SCS1207</td>
                                             <td>SMT1205</td>
                                             <td>SEC1312</td>
-                                           
                                         </tr>
 
                                         <tr>
@@ -91,7 +88,6 @@ include('include/functions.php');
                                             <td>SMT1205</td>
                                             <td>SCS1209</td>
                                             <td>SCS1209</td>
-                                           
                                         </tr>
 
                                         <tr>
@@ -99,10 +95,9 @@ include('include/functions.php');
                                             <td>SCS1209</td>
                                             <td>SCS1207</td>
                                             <td>SCS1306</td>
-                                            <td>SEC4087/SCS4302</td>
-                                            <td>SEC4087/SCS4302</td>
-                                            <td>SEC4087/SCS4302</td>
-                                           
+                                            <td>SEC4087&nbsp;/&nbsp;SCS4302</td>
+                                            <td>SEC4087&nbsp;/&nbsp;SCS4302</td>
+                                            <td>SEC4087&nbsp;/&nbsp;SCS4302</td>
                                         </tr>
 
                                         <tr>
@@ -113,10 +108,9 @@ include('include/functions.php');
                                             <td>SCS1209</td>
                                             <td>SCS1306</td>
                                             <td>SCS1207</td>
-                                           
                                         </tr>
                                     </tbody>
-                                    
+
                                 </table>
                             </div>
 
