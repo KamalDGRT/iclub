@@ -14,7 +14,7 @@
 
 <body>
 
-    <?php include('clg/include/header.php'); ?>
+    <?php include('clg/include/header.php'); ?>    
 
     <main class="page">
         <section class="clean-block slider">
