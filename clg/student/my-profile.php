@@ -53,10 +53,9 @@ include('include/functions.php');
                                 <div class="col-lg-8">
                                     <?php $row = fetchFrom("namelist", $_SESSION['id']); ?>
                                     </span>
-                                    <?php field_1("", 5, "text-dark myText", "Name", 7, "text-dark h5", "$row[3]"); ?>
-                                    <?php field_1("mu-10", 5, "text-dark myText", "Registration Number", 7, "text-dark h5", "$row[1]"); ?>
-                                    <?php field_1("mu-10", 5, "text-dark myText", "Roll Number", 7, "text-dark h5", "$row[2]"); ?>
-                                    <?php field_1("mu-10", 5, "text-dark myText", "Email Address", 7, "text-dark h5", "$row[7]"); ?>
+                                    <?php field_1("", 5, "text-dark myText", "Name", 7, "text-dark h5", "$row[2]"); ?>
+                                    <?php field_1("mu-10", 5, "text-dark myText", "Registration Number", 7, "text-dark h5", "$row[1]"); ?>                                    
+                                    <?php field_1("mu-10", 5, "text-dark myText", "Email Address", 7, "text-dark h5", "$row[3]"); ?>
                                     
                                 </div>
                             </div>
