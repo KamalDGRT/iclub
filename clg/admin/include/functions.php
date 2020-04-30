@@ -27,12 +27,26 @@ function statusText($status)
     return $message;
 }
 
+function meetingStatusText($status)
+{
+    $message = "";
+    if($status==1){
+        $message = "Held";
+    } elseif($status==2) {
+        $message = "Cancelled";
+    } elseif($status==3) {
+        $message = "Upcoming";
+    }
+    return $message;
+}
+
 function PHPDay($date)
 {
     $timestamp = strtotime($date);
     $day = date('l', $timestamp);
     return $day;
 }
+
 function displayTableHeadUserLogs()
 {
     $content = "<tr class=\"text-center\">";
@@ -47,15 +61,16 @@ function displayTableHeadUserLogs()
     echo $content;
 }
 
-function myDateFormat($dateTime)
+function myDateFormat($dateTime,$format)
 {
     $myDate = "";
     if(!is_null($dateTime)) {
         $log = date_create($dateTime);
-        $myDate = date_format($log, 'd-m-Y g:i:s a');        
+        $myDate = date_format($log,$format);        
     }
     return $myDate;
 }
+
 function displayUserLogs()
 {
     global $con;
@@ -69,8 +84,8 @@ function displayUserLogs()
     $content .=      "<td>$count</td>";
     $content .=      "<td>".$row["uid"]."</td>";
     $content .=      "<td>".$row["username"]."</td>";    
-    $content .=      "<td>".myDateFormat($row["loginTime"])."</td>";
-    $content .=      "<td>".myDateFormat($row["logout"])."</td>";
+    $content .=      "<td>".myDateFormat($row["loginTime"],'d-m-Y g:i:s a')."</td>";
+    $content .=      "<td>".myDateFormat($row["logout"],'d-m-Y g:i:s a')."</td>";
     $content .=      "<td>".statusText($row["status"])."</td>";
     $content .=      "<td>";
     $content .=          "<a href=\"#\" class=\"btn-xs tooltips\" tooltip-placement=\"top\" tooltip=\"Edit\">";
@@ -86,4 +101,47 @@ function displayUserLogs()
     $count++; }
 }
 
+function displayTableHeadMeetingAdmin()
+{
+    $content = "<tr class=\"text-center\">";
+    $content .=   "<th style=\"width:15%;\">Date</th>";
+    $content .=   "<th style=\"width:25%;\">Course&nbsp;Name</th>";
+    $content .=   "<th style=\"width:15%;\">Meeting&nbsp;Host</th>";
+    $content .=   "<th style=\"width:15%;\">Meeting&nbsp;Time</th>";    
+    $content .=   "<th style=\"width:15%;\">Status</th>";
+    $content .=   "<th style=\"width:15%;\">Options</th>";
+    $content .= "</tr>\n";
+    echo $content;
+}
+
+function displayMeetingsAdmin()
+{
+    global $con;
+    $sel_query = "SELECT * FROM meetings";
+    $result = mysqli_query($con, $sel_query);
+
+    while ($row = mysqli_fetch_assoc($result)) {
+
+    $content = "<tr class=\"text-center\">";    
+    $content .=      "<td>".myDateFormat($row["m_date"],'d-m-Y')."</td>";
+    $content .=      "<td>".$row["course_name"]."</td>";    
+    $content .=      "<td>".$row["m_host"]."</td>";
+    $content .=      "<td>".$row["m_timing"]."</td>";
+    $content .=      "<td>".meetingStatusText($row["m_status"])."</td>";    
+    $content .=      "<td>";
+    $content .=          "<a href=\"#\" class=\"btn-xs tooltips\" tooltip-placement=\"top\" tooltip=\"Edit\">";
+    $content .=              "<i class=\"fa fa-eye\"></i>";
+    $content .=          "</a>&nbsp;&nbsp;&nbsp;&nbsp;";
+    $content .=          "<a href=\"#\" class=\"btn-xs tooltips\" tooltip-placement=\"top\" tooltip=\"Edit\">";
+    $content .=              "<i class=\"fa fa-edit\"></i>";
+    $content .=          "</a>&nbsp;&nbsp;&nbsp;&nbsp;";
+    $content .=          "<a href=\"#\" onClick=\"return confirm('Are you sure you want to delete?')\" class=\"btn-xs tooltips\" tooltip-placement=\"top\" tooltip=\"Remove\">";
+    $content .=              "<i class=\"fa fa-times fa fa-white\"></i>";
+    $content .=          "</a>";
+    $content .=      "</td>";
+    $content .= " </tr>\n";
+
+    echo $content;
+    }
+}
 ?>
