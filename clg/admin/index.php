@@ -17,11 +17,6 @@ include('include/functions.php');
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
     <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <style>
-        .card-body {
-            line-height: 40px;
-        }
-    </style>
 </head>
 
 <body id="page-top">
@@ -38,8 +33,9 @@ include('include/functions.php');
                         <h3 class="text-dark mb-0">Dashboard</h3>
                     </div>
                     <div class="row">
-                        <?php myCard("formoutput1.php", "myText", "Fillled MPMC form", "card shadow border-left-success py-2", "card-body", "far fa-sticky-note fa-2x text-gray-300"); ?>
-                        <?php myCard("formoutput2.php", "myText", "Form not filled", "card shadow border-left-primary py-2", "card-body", "far fa-sticky-note fa-2x text-gray-300"); ?>
+                        <?php myCard("view-courses.php", "myText", "Courses", "card shadow border-left-success py-2", "card-body", "far fa-sticky-note fa-2x text-gray-300"); ?>
+                        <?php myCard("view-meetings.php", "myText", "Meetings", "card shadow border-left-primary py-2", "card-body", "far fa-sticky-note fa-2x text-gray-300"); ?>
+                        <?php myCard("change-password.php", "myText", "Change&nbsp;Password", "card shadow border-left-primary py-2", "card-body", "far fa-sticky-note fa-2x text-gray-300"); ?>
                     </div>
 
                 </div>
@@ -51,7 +47,7 @@ include('include/functions.php');
     </div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
+    <script src="assets/js/jquery.easing.js"></script>
     <script src="assets/js/theme.js"></script>
 </body>
 

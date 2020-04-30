@@ -24,12 +24,25 @@
             <li class="nav-item" role="presentation">
                 <div>
                     <a class="btn btn-link nav-link" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-1" href="#collapse-1" role="button">
-                        <i class="fas fa-sticky-note fa-2x"></i>&nbsp;<span>MPMC Form Datas</span>
+                        <i class="fas fa-sticky-note fa-2x"></i>&nbsp;<span>Courses</span>
                     </a>
                     <div class="collapse" id="collapse-1">
-                        <div class="bg-white border rounded py-2 collapse-inner">
-                            <a class="collapse-item" href="formoutput1.php">Filled</a>
-                            <a class="collapse-item" href="formoutput2.php">Not Filled</a>
+                        <div class="bg-white border rounded py-2 collapse-inner">                            
+                            <a class="collapse-item" href="#">View Courses</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item" role="presentation">
+                <div>
+                    <a class="btn btn-link nav-link" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-2" href="#collapse-2" role="button">
+                        <i class="fas fa-sticky-note fa-2x"></i>&nbsp;<span>Meetings</span>
+                    </a>
+                    <div class="collapse" id="collapse-2">
+                        <div class="bg-white border rounded py-2 collapse-inner">                            
+                            <a class="collapse-item" href="add-meeting.php">Add Meeting</a>
+                            <a class="collapse-item" href="view-meetings.php">View Meetings</a>
                         </div>
                     </div>
                 </div>
