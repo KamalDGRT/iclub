@@ -174,7 +174,7 @@ function displayTableHeadCoursesAdmin()
     $content .=   "<th style=\"width:35%;\">Course&nbsp;Name</th>";
     $content .=   "<th style=\"width:15%;\">Course&nbsp;Type</th>";
     $content .=   "<th style=\"width:10%;\">Status</th>";
-    $content .=   "<th style=\"width:15%;\">Options</th>";
+    $content .=   "<th style=\"width:15%;\" class=\"hidden-xs\">Options</th>";
     $content .= "</tr>\n";
     echo $content;
 }
@@ -196,10 +196,10 @@ function displayCoursesAdmin()
     $content .=      "<td>";
     $content .=          "<a href=\"#\" class=\"btn-xs tooltips\" tooltip-placement=\"top\" tooltip=\"Edit\">";
     $content .=              "<i class=\"fa fa-eye\"></i>";
-    $content .=          "</a>&nbsp;&nbsp;&nbsp;&nbsp;";
+    $content .=          "</a>&nbsp;";
     $content .=          "<a href=\"#\" class=\"btn-xs tooltips\" tooltip-placement=\"top\" tooltip=\"Edit\">";
     $content .=              "<i class=\"fa fa-edit\"></i>";
-    $content .=          "</a>&nbsp;&nbsp;&nbsp;&nbsp;";
+    $content .=          "</a>&nbsp;";
     $content .=          "<a href=\"#\" onClick=\"return confirm('Are you sure you want to delete?')\" class=\"btn-xs tooltips\" tooltip-placement=\"top\" tooltip=\"Remove\">";
     $content .=              "<i class=\"fa fa-times fa fa-white\"></i>";
     $content .=          "</a>";

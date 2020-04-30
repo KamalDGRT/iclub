@@ -33,8 +33,13 @@ include('include/functions.php');
                         <h3 class="text-dark mb-0">Dashboard</h3>
                     </div>
                     <div class="row">
+                        <?php myCard("view-students.php", "myText", "Students", "card shadow border-left-primary py-2", "card-body", "far fa-sticky-note fa-2x text-gray-300"); ?>
+                        <?php myCard("view-teachers.php", "myText", "Teachers", "card shadow border-left-secondary py-2", "card-body", "far fa-sticky-note fa-2x text-gray-300"); ?>
                         <?php myCard("view-courses.php", "myText", "Courses", "card shadow border-left-success py-2", "card-body", "far fa-sticky-note fa-2x text-gray-300"); ?>
-                        <?php myCard("view-meetings.php", "myText", "Meetings", "card shadow border-left-primary py-2", "card-body", "far fa-sticky-note fa-2x text-gray-300"); ?>
+                        <?php myCard("view-time-table.php", "myText", "Timetables", "card shadow border-left-info py-2", "card-body", "far fa-sticky-note fa-2x text-gray-300"); ?>
+                        <?php myCard("view-meetings.php", "myText", "Meetings", "card shadow border-left-warning py-2", "card-body", "far fa-sticky-note fa-2x text-gray-300"); ?>
+                        <?php myCard("view-events.php", "myText", "Events", "card shadow border-left-danger py-2", "card-body", "far fa-sticky-note fa-2x text-gray-300"); ?>
+                        <?php myCard("view-clubs.php", "myText", "Clubs", "card shadow border-left-dark py-2", "card-body", "far fa-sticky-note fa-2x text-gray-300"); ?>
                         <?php myCard("change-password.php", "myText", "Change&nbsp;Password", "card shadow border-left-primary py-2", "card-body", "far fa-sticky-note fa-2x text-gray-300"); ?>
                     </div>
 
