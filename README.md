@@ -31,12 +31,13 @@ _By having a single place to access all of the above (and not limited to those f
 
 **A )** _We hosted the portal on a free hosting provider 000webhost to share it with our classmates in order to log in, test our solution, and get feedback on it. When we receive any feedback, we evaluated it internally within our team and decided to take it or not depending on a variety of factors like usefulness, impact, and feasibility._
 
-**Q ) What do you see as the future / next steps for your project? What will take your project to the next level?
- 	What specific support do you need to achieve that? **
+**Q ) What do you see as the future / next steps for your project? What will take your project to the next level? What specific support do you need to achieve that?**
 
-**A )** _We can expand to other colleges in the country, and potentially go global as well. Colleges can adapt this solution to manage their administrative affairs, student activities, and specific solutions like attendance tracking.
-A good web hosting platform to host this portal.
-Implementing the same using Flutter Toolkit in order to have a single codebase is also up for discussion._
+**A )** _We can expand to other colleges in the country, and potentially go global as well. Colleges can adapt this solution to manage their administrative affairs, student activities, and specific solutions like attendance tracking._
+
+_Implementing the same using Flutter Toolkit in order to have a single codebase is also up for discussion._
+
+_A good web hosting platform to host this portal._
 
 ___
 ## Getting Started
@@ -49,14 +50,17 @@ These instructions will get you a copy of the project up and running on your loc
 1) Clone this repository to the *htdocs* folder, which is present inside the installation folder of Xampp.
 2) Start the *Apache* and *MySQL* servers in the Xampp Control Panel.
 3) Type this in your local browser.
-			```
-		localhost/iclub
-		```
+		
+```
+localhost/iclub
+```
 
 4) If the above url doesn't work, then type this: 
-			```
-		localhost:8080/iclub
-		```
+
+```
+localhost:8080/iclub
+```
+
 5) Login with the credentials given below:
 
 	| User |Email address | Password |
@@ -69,4 +73,5 @@ These instructions will get you a copy of the project up and running on your loc
 ## Acknowledgements
 
 We express our sincere thanks to the creators of [Bootstrap Studio](https://bootstrapstudio.io/) for the layouts in their application.
+
 We also would like to thank the developers at [phpmygurukul.com](https://phpgurukul.com/) for the log-in page layout.
