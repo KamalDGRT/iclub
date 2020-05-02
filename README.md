@@ -40,6 +40,17 @@ _Implementing the same using Flutter Toolkit in order to have a single codebase 
 _A good web hosting platform to host this portal._
 
 ___
+
+## Features proposed in the next update:
+- Students will be getting announcement which they can keep track of.
+- Admin will be able to set the timetable for the whole college and manage it.
+- A GPA calculator for the students.
+- Adding a new user role of teacher / staff
+- Staff will be entering subject mark of students and Students can view it directly and hence GPA will be evaluated for any particular exam automatically.
+- Staff will be taking hourly attendance which in turn will help student keep track of his/her attendance percentage.
+
+---
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
