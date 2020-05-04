@@ -78,7 +78,11 @@ if (isset($_POST['submit'])) {
                     <div class="form-group">
                         <button class="btn btn-primary btn-block" type="submit" name="submit">Send</button>
                     </div>
-                </form>
+                </form><br>
+
+                <div class="text-center">
+                    <p>Fill the feedback form <a href="https://bit.ly/sist-feedback" target="_blank">here</a></p>                
+                </div>
             </div>
         </section>
     </main>
