@@ -11,10 +11,12 @@ include('include/functions.php');
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Admin | View Clubs</title>
+    <title>Admin | Clubs</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/dataTables.bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
     <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/css/tablestyle.css">
 </head>
 
 <body id="page-top">
@@ -25,13 +27,29 @@ include('include/functions.php');
             <div id="content">
 
                 <?php include('include/header.php'); ?>
+
                 <div class="container-fluid">
-                    <div class="text-center mt-5">
-                        <div class="error mx-auto" data-text="404">
-                            <p class="m-0">404</p>
+                    <div class="card shadow">
+                        <div class="card-header py-3">
+                            <p class="text-primary m-0 font-weight-bold">Clubs present in the college</p>
                         </div>
-                        <p class="text-dark mb-5 lead">Page Not Found</p>
-                        <p class="text-black-50 mb-0">It looks like you found a glitch in the matrix...</p><a href="index.php">← Back to Dashboard</a>
+                        <div class="card-body">
+
+                            <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
+                                <table class="table dataTable my-0" id="clubs">
+                                    <thead>
+                                        <?php displayTableHeadClubsAdmin(); ?>
+                                    </thead>
+                                    <tbody>
+                                        <?php displayClubsAdmin(); ?>
+                                    </tbody>
+                                    <tfoot>
+                                        <?php displayTableHeadClubsAdmin(); ?>
+                                    </tfoot>
+                                </table>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>
@@ -43,7 +61,16 @@ include('include/functions.php');
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/jquery.easing.js"></script>
+    <script src="assets/js/jquery.dataTables.min.js"></script>
+    <script src="assets/js/dataTables.bootstrap.min.js"></script>
     <script src="assets/js/theme.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#clubs').DataTable({
+                "ordering": false
+            });
+        });
+    </script>
 </body>
 
 </html>
