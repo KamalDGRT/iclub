@@ -11,7 +11,7 @@ include('include/functions.php');
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Admin | Add Timetable</title>
+    <title>Admin | Edit Timetable</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
     <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
@@ -30,7 +30,7 @@ include('include/functions.php');
                 <div class="container-fluid">
                     <div class="card shadow">
                         <div class="card-header py-3">
-                            <p class="text-primary m-0 font-weight-bold">Adding a Timetable</p>
+                            <p class="text-primary m-0 font-weight-bold">Editing a Timetable</p>
                         </div>
                         <div class="card-body">
                             <form>
@@ -66,62 +66,62 @@ include('include/functions.php');
 
                                             <tr>
                                                 <td><strong>MONDAY</strong></td>
-                                                <td><input class="form-control" type="text" name="mon&#91;&#93;" id=""></td>
-                                                <td><input class="form-control" type="text" name="mon&#91;&#93;" id=""></td>
-                                                <td><input class="form-control" type="text" name="mon&#91;&#93;" id=""></td>
-                                                <td><input class="form-control" type="text" name="mon&#91;&#93;" id=""></td>
-                                                <td><input class="form-control" type="text" name="mon&#91;&#93;" id=""></td>
-                                                <td><input class="form-control" type="text" name="mon&#91;&#93;" id=""></td>
+                                                <td><input class="form-control" type="text" name="mon&#91;&#93;" id="" value=""></td>
+                                                <td><input class="form-control" type="text" name="mon&#91;&#93;" id="" value=""></td>
+                                                <td><input class="form-control" type="text" name="mon&#91;&#93;" id="" value=""></td>
+                                                <td><input class="form-control" type="text" name="mon&#91;&#93;" id="" value=""></td>
+                                                <td><input class="form-control" type="text" name="mon&#91;&#93;" id="" value=""></td>
+                                                <td><input class="form-control" type="text" name="mon&#91;&#93;" id="" value=""></td>
                                             </tr>
 
                                             <tr>
                                                 <td><strong>TUESDAY</strong></td>
-                                                <td><input class="form-control" type="text" name="tue&#91;&#93;" id=""></td>
-                                                <td><input class="form-control" type="text" name="tue&#91;&#93;" id=""></td>
-                                                <td><input class="form-control" type="text" name="tue&#91;&#93;" id=""></td>
-                                                <td><input class="form-control" type="text" name="tue&#91;&#93;" id=""></td>
-                                                <td><input class="form-control" type="text" name="tue&#91;&#93;" id=""></td>
-                                                <td><input class="form-control" type="text" name="tue&#91;&#93;" id=""></td>
+                                                <td><input class="form-control" type="text" name="tue&#91;&#93;" id="" value=""></td>
+                                                <td><input class="form-control" type="text" name="tue&#91;&#93;" id="" value=""></td>
+                                                <td><input class="form-control" type="text" name="tue&#91;&#93;" id="" value=""></td>
+                                                <td><input class="form-control" type="text" name="tue&#91;&#93;" id="" value=""></td>
+                                                <td><input class="form-control" type="text" name="tue&#91;&#93;" id="" value=""></td>
+                                                <td><input class="form-control" type="text" name="tue&#91;&#93;" id="" value=""></td>
                                             </tr>
 
                                             <tr>
                                                 <td><strong>WEDNESDAY</strong></td>
-                                                <td><input class="form-control" type="text" name="wed&#91;&#93;" id=""></td>
-                                                <td><input class="form-control" type="text" name="wed&#91;&#93;" id=""></td>
-                                                <td><input class="form-control" type="text" name="wed&#91;&#93;" id=""></td>
-                                                <td><input class="form-control" type="text" name="wed&#91;&#93;" id=""></td>
-                                                <td><input class="form-control" type="text" name="wed&#91;&#93;" id=""></td>
-                                                <td><input class="form-control" type="text" name="wed&#91;&#93;" id=""></td>
+                                                <td><input class="form-control" type="text" name="wed&#91;&#93;" id="" value=""></td>
+                                                <td><input class="form-control" type="text" name="wed&#91;&#93;" id="" value=""></td>
+                                                <td><input class="form-control" type="text" name="wed&#91;&#93;" id="" value=""></td>
+                                                <td><input class="form-control" type="text" name="wed&#91;&#93;" id="" value=""></td>
+                                                <td><input class="form-control" type="text" name="wed&#91;&#93;" id="" value=""></td>
+                                                <td><input class="form-control" type="text" name="wed&#91;&#93;" id="" value=""></td>
                                             </tr>
 
                                             <tr>
                                                 <td><strong>THURSDAY</strong></td>
-                                                <td><input class="form-control" type="text" name="thur&#91;&#93;" id=""></td>
-                                                <td><input class="form-control" type="text" name="thur&#91;&#93;" id=""></td>
-                                                <td><input class="form-control" type="text" name="thur&#91;&#93;" id=""></td>
-                                                <td><input class="form-control" type="text" name="thur&#91;&#93;" id=""></td>
-                                                <td><input class="form-control" type="text" name="thur&#91;&#93;" id=""></td>
-                                                <td><input class="form-control" type="text" name="thur&#91;&#93;" id=""></td>
+                                                <td><input class="form-control" type="text" name="thur&#91;&#93;" id="" value=""></td>
+                                                <td><input class="form-control" type="text" name="thur&#91;&#93;" id="" value=""></td>
+                                                <td><input class="form-control" type="text" name="thur&#91;&#93;" id="" value=""></td>
+                                                <td><input class="form-control" type="text" name="thur&#91;&#93;" id="" value=""></td>
+                                                <td><input class="form-control" type="text" name="thur&#91;&#93;" id="" value=""></td>
+                                                <td><input class="form-control" type="text" name="thur&#91;&#93;" id="" value=""></td>
                                             </tr>
 
                                             <tr>
                                                 <td><strong>FRIDAY</strong></td>
-                                                <td><input class="form-control" type="text" name="fri&#91;&#93;" id=""></td>
-                                                <td><input class="form-control" type="text" name="fri&#91;&#93;" id=""></td>
-                                                <td><input class="form-control" type="text" name="fri&#91;&#93;" id=""></td>
-                                                <td><input class="form-control" type="text" name="fri&#91;&#93;" id=""></td>
-                                                <td><input class="form-control" type="text" name="fri&#91;&#93;" id=""></td>
-                                                <td><input class="form-control" type="text" name="fri&#91;&#93;" id=""></td>
+                                                <td><input class="form-control" type="text" name="fri&#91;&#93;" id="" value=""></td>
+                                                <td><input class="form-control" type="text" name="fri&#91;&#93;" id="" value=""></td>
+                                                <td><input class="form-control" type="text" name="fri&#91;&#93;" id="" value=""></td>
+                                                <td><input class="form-control" type="text" name="fri&#91;&#93;" id="" value=""></td>
+                                                <td><input class="form-control" type="text" name="fri&#91;&#93;" id="" value=""></td>
+                                                <td><input class="form-control" type="text" name="fri&#91;&#93;" id="" value=""></td>
                                             </tr>
 
                                             <tr>
                                                 <td><strong>SATURDAY</strong></td>
-                                                <td><input class="form-control" type="text" name="sat&#91;&#93;" id=""></td>
-                                                <td><input class="form-control" type="text" name="sat&#91;&#93;" id=""></td>
-                                                <td><input class="form-control" type="text" name="sat&#91;&#93;" id=""></td>
-                                                <td><input class="form-control" type="text" name="sat&#91;&#93;" id=""></td>
-                                                <td><input class="form-control" type="text" name="sat&#91;&#93;" id=""></td>
-                                                <td><input class="form-control" type="text" name="sat&#91;&#93;" id=""></td>
+                                                <td><input class="form-control" type="text" name="sat&#91;&#93;" id="" value=""></td>
+                                                <td><input class="form-control" type="text" name="sat&#91;&#93;" id="" value=""></td>
+                                                <td><input class="form-control" type="text" name="sat&#91;&#93;" id="" value=""></td>
+                                                <td><input class="form-control" type="text" name="sat&#91;&#93;" id="" value=""></td>
+                                                <td><input class="form-control" type="text" name="sat&#91;&#93;" id="" value=""></td>
+                                                <td><input class="form-control" type="text" name="sat&#91;&#93;" id="" value=""></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -130,7 +130,7 @@ include('include/functions.php');
                                 <div class="form-row form-group">
                                     <div class="col-lg-2"></div>
                                     <div class="col-lg-8 input-column">
-                                        <button class="btn btn-primary btn-xl form-control bg-gradient-primary" type="submit" name="">Add Timetable</button>
+                                        <button class="btn btn-primary btn-xl form-control bg-gradient-primary" type="submit" name="">Update Timetable</button>
                                     </div>
                                 </div>
 
