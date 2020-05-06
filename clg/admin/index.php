@@ -40,7 +40,7 @@ include('include/functions.php');
                         <?php myCard("view-meetings.php", "myText", "Meetings", "card shadow border-left-warning py-2", "card-body", "far fa-sticky-note fa-2x text-gray-300"); ?>
                         <?php myCard("view-events.php", "myText", "Events", "card shadow border-left-danger py-2", "card-body", "far fa-sticky-note fa-2x text-gray-300"); ?>
                         <?php myCard("view-clubs.php", "myText", "Clubs", "card shadow border-left-dark py-2", "card-body", "far fa-sticky-note fa-2x text-gray-300"); ?>
-                        <?php myCard("change-password.php", "myText", "Change&nbsp;Password", "card shadow border-left-primary py-2", "card-body", "far fa-sticky-note fa-2x text-gray-300"); ?>
+                        <?php myCard("change-password.php", "myText", "Change Password", "card shadow border-left-primary py-2", "card-body", "far fa-sticky-note fa-2x text-gray-300"); ?>
                     </div>
 
                 </div>

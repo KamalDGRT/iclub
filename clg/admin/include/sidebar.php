@@ -41,9 +41,24 @@
                         <i class="fas fa-sticky-note fa-2x"></i>&nbsp;<span>Meetings</span>
                     </a>
                     <div class="collapse" id="collapse-2">
-                        <div class="bg-white border rounded py-2 collapse-inner">                            
+                        <div class="bg-white border rounded py-2 collapse-inner">
                             <a class="collapse-item" href="add-meeting.php">Add Meeting</a>
                             <a class="collapse-item" href="view-meetings.php">View Meetings</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item" role="presentation">
+                <div>
+                    <a class="btn btn-link nav-link" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-3" href="#collapse-3" role="button">
+                        <i class="fas fa-calendar fa-2x"></i>&nbsp;<span>Timetables</span>
+                    </a>
+                    <div class="collapse" id="collapse-3">
+                        <div class="bg-white border rounded py-2 collapse-inner">
+                            <a class="collapse-item" href="add-time-table.php">Add Timetable</a>
+                            <a class="collapse-item" href="view-time-table.php">View Timetable</a>
+                            <a class="collapse-item" href="edit-time-table.php">Edit Timetable</a>
                         </div>
                     </div>
                 </div>
@@ -57,10 +72,10 @@
 
             <li class="nav-item" role="presentation">
                 <div>
-                    <a class="btn btn-link nav-link" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-3" href="#collapse-3" role="button">
+                    <a class="btn btn-link nav-link" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-4" href="#collapse-4" role="button">
                         <i class="fas fa-user"></i>&nbsp;<span>Profile</span>
                     </a>
-                    <div class="collapse" id="collapse-3">
+                    <div class="collapse" id="collapse-4">
                         <div class="bg-white border rounded py-2 collapse-inner">
                             <a class="collapse-item" href="my-profile.php">My Profile</a>
                             <a class="collapse-item" href="change-password.php">Change Password</a>
@@ -78,7 +93,7 @@
 
             <li class="nav-item" role="presentation">
                 <a class="nav-link" href="user-session-logs.php">
-                    <i class="fas fa-sticky-note"></i><span>&nbsp;User&nbsp;Session&nbsp;Logs</span>
+                    <i class="fas fa-sticky-note"></i><span>&nbsp;User&nbsp;Logs</span>
                 </a>
             </li>
 
