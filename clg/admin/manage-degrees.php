@@ -4,6 +4,24 @@ include('include/config.php');
 include('include/checklogin.php');
 check_login();
 include('include/functions.php');
+if (isset($_POST['add_degree'])) {
+
+    global $con;
+
+    $sdegree = $_POST['short_degree'];
+
+    $fdegree = $_POST['full_degree'];
+
+    $dtype = $_POST['degree_type'];
+
+    $query = "INSERT INTO degrees (s_degree,deg_fullname,deg_type) VALUES ('$sdegree','$fdegree','$dtype');";
+
+    $sql = mysqli_query($con, $query);
+
+    if ($sql) {
+        echo "<script>alert('Degree is added successfully');</script>";
+    }
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -35,26 +53,26 @@ include('include/functions.php');
                         </div>
 
                         <div class="card-body">
-                            <form role="form">
+                            <form role="form" class="custom-form" method="post" action="">
                                 <div class="form-row">
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <input type="text" name="endegree" class="form-control" placeholder="Enter Degree">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="form-group">                                            
-                                            <input type="text" name="enfullform" class="form-control" placeholder="Full form">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="form-group">                                            
-                                            <input type="text" name="addegreetype" class="form-control" placeholder="Degree Type">
+                                            <input type="text" name="short_degree" class="form-control" placeholder="Enter Degree">
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <button class="btn btn-primary btn-xl form-control bg-gradient-primary" type="submit" name="">Add&nbsp;Degree</button>
+                                            <input type="text" name="full_degree" class="form-control" placeholder="Full form">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <input type="text" name="degree_type" class="form-control" placeholder="Degree Type">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <button class="btn btn-primary btn-xl form-control bg-gradient-primary" type="submit" name="add_degree">Add&nbsp;Degree</button>
                                         </div>
                                     </div>
                                 </div>
@@ -73,66 +91,10 @@ include('include/functions.php');
                             <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
                                 <table class="table dataTable my-0 black" id="viewdegrees">
                                     <thead class="h6 myFont">
-                                        <tr class="text-center">
-                                            <th>S.No.</th>
-                                            <th>Degree</th>
-                                            <th>Full&nbsp;Form</th>
-                                            <th>Options</th>
-                                        </tr>
+                                        <?php displayTableHeadDegreesAdmin(); ?>
                                     </thead>
                                     <tbody>
-                                        <tr class="text-center">
-                                            <td>1</td>
-                                            <td>B.Tech</td>
-                                            <td>Bachelor of Technology</td>
-                                            <td>
-                                                <a href="#" class="btn-xs tooltips" tooltip-placement="top" tooltip="Edit">
-                                                    <i class="fa fa-edit"></i>
-                                                </a>&nbsp;&nbsp;&nbsp;&nbsp;
-                                                <a href="#" onClick="return confirm('Are you sure you want to delete?')" class="btn-xs tooltips" tooltip-placement="top" tooltip="Remove">
-                                                    <i class="fa fa-times fa fa-white"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        <tr class="text-center">
-                                            <td>2</td>
-                                            <td>B.E.</td>
-                                            <td>Bachelor of Engineering</td>
-                                            <td>
-                                                <a href="#" class="btn-xs tooltips" tooltip-placement="top" tooltip="Edit">
-                                                    <i class="fa fa-edit"></i>
-                                                </a>&nbsp;&nbsp;&nbsp;&nbsp;
-                                                <a href="#" onClick="return confirm('Are you sure you want to delete?')" class="btn-xs tooltips" tooltip-placement="top" tooltip="Remove">
-                                                    <i class="fa fa-times fa fa-white"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        <tr class="text-center">
-                                            <td>3</td>
-                                            <td>B.Com.</td>
-                                            <td>Bachelor of Commerce</td>
-                                            <td>
-                                                <a href="#" class="btn-xs tooltips" tooltip-placement="top" tooltip="Edit">
-                                                    <i class="fa fa-edit"></i>
-                                                </a>&nbsp;&nbsp;&nbsp;&nbsp;
-                                                <a href="#" onClick="return confirm('Are you sure you want to delete?')" class="btn-xs tooltips" tooltip-placement="top" tooltip="Remove">
-                                                    <i class="fa fa-times fa fa-white"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        <tr class="text-center">
-                                            <td>4</td>
-                                            <td>B.Arts</td>
-                                            <td>Bachelor of Arts</td>
-                                            <td>
-                                                <a href="#" class="btn-xs tooltips" tooltip-placement="top" tooltip="Edit">
-                                                    <i class="fa fa-edit"></i>
-                                                </a>&nbsp;&nbsp;&nbsp;&nbsp;
-                                                <a href="#" onClick="return confirm('Are you sure you want to delete?')" class="btn-xs tooltips" tooltip-placement="top" tooltip="Remove">
-                                                    <i class="fa fa-times fa fa-white"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
+                                        <?php displayDegreesAdmin(); ?>
                                     </tbody>
                                 </table>
                             </div>
