@@ -329,4 +329,42 @@ function displayDegreesAdmin()
     }
 }
 
+function displayTableHeadSchoolsAdmin()
+{
+    $content = "<tr class=\"text-center\">";
+    $content .=   "<th style=\"width:20%;\">S.No.</th>";    
+    $content .=   "<th style=\"width:20%;\">School Code</th>";
+    $content .=   "<th style=\"width:40%;\">School Name</th>";
+    $content .=   "<th style=\"width:20%;\" class=\"hidden-xs\">Options</th>";
+    $content .= "</tr>\n";
+    echo $content;
+}
+
+function displaySchoolsAdmin()
+{
+    global $con;
+    $sel_query = "SELECT * FROM s_schools";
+    $result = mysqli_query($con, $sel_query);
+    $count = 1;
+    while ($row = mysqli_fetch_assoc($result)) {
+
+    $content = "<tr class=\"text-center\">";
+    $content .=      "<td>".$count."</td>";    
+    $content .=      "<td>".$row["s_code"]."</td>";
+    $content .=      "<td>".$row["sch_name"]."</td>";
+    $content .=      "<td>";
+    $content .=          "<a href=\"edit-school.php?included={$row['id']}\" class=\"btn-xs tooltips\" tooltip-placement=\"top\" tooltip=\"Edit\">";
+    $content .=              "<i class=\"fa fa-edit\"></i>";
+    $content .=          "</a>&nbsp;";
+    $content .=          "<a href=\"#\" onClick=\"return confirm('Are you sure you want to delete?')\" class=\"btn-xs tooltips\" tooltip-placement=\"top\" tooltip=\"Remove\">";
+    $content .=              "<i class=\"fa fa-times fa fa-white\"></i>";
+    $content .=          "</a>";
+    $content .=      "</td>";
+    $content .= " </tr>\n";
+
+    echo $content;
+    $count++;
+    }
+}
+
 ?>

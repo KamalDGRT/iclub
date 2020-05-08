@@ -4,6 +4,25 @@ include('include/config.php');
 include('include/checklogin.php');
 check_login();
 include('include/functions.php');
+$msg = "";
+if (isset($_POST['add_school'])) {
+    global $con;
+
+    $shcode = $_POST['shcode'];
+
+    $schname = $_POST['schname'];
+
+    date_default_timezone_set('Asia/Kolkata');
+    $ldate=date( 'Y-m-d H:i:s');
+
+    $query = "INSERT INTO s_schools (s_code,sch_name,creation_date) VALUES ('$shcode','$schname','$ldate')";
+
+    $sql = mysqli_query($con, $query);
+
+    if ($sql) {
+        $msg = "School Details Added Successfully";
+    }
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -33,128 +52,49 @@ include('include/functions.php');
                         <div class="card-header py-3">
                             <p class="text-primary m-0 font-weight-bold">Adding a New School</p>
                         </div>
-                        
+
                         <div class="card-body">
-                             <form role="form" >
+                            <h5 style="color: green; font-size:18px; ">
+                                <?php if ($msg) {
+                                    echo htmlentities($msg);
+                                } ?>
+                            </h5>
+                            <form role="form" method="post">
                                 <div class="form-row">
-                                    <div class="col-md-3">
+                                    <div class="col-md-2">
                                         <div class="form-group">
-                                            <label><strong>Enter a school Name</strong></label>
-                                            <input type="text" name="endegree" class="form-control" placeholder="school name">
+                                            <input type="text" name="shcode" class="form-control" placeholder="Short Code" required>
                                         </div>
                                     </div>
-                                    <div class="col-md-3">
+                                    <div class="col-md-5">
                                         <div class="form-group">
-                                            <label><strong>Add school</strong></label>
-                                            <input type="text" name="addschool" class="form-control" placeholder="">
+                                            <input type="text" name="schname" class="form-control" placeholder="Enter a School Name" required>
                                         </div>
-                                    </div>                                   
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div class="form-group">
+                                            <button class="btn btn-primary btn-xl form-control bg-gradient-primary" type="submit" name="add_school">Add&nbsp;School</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
                 <br>
-                 <div class="container-fluid">
+                <div class="container-fluid">
                     <div class="card shadow">
                         <div class="card-header py-3">
                             <p class="text-primary m-0 font-weight-bold">Schools</p>
-                        </div>                       
+                        </div>
                         <div class="card-body">
-                             <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
+                            <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
                                 <table class="table dataTable my-0 myText myFont" id="viewtt">
                                     <thead class="h6 myFont">
-                                        <tr class="text-center">
-                                            <th>S.No.</th>
-                                            <th>School&nbsp;Name</th>
-                                            <th>Options</th>                                           
-                                        </tr>
+                                        <?php displayTableHeadSchoolsAdmin(); ?>
                                     </thead>
                                     <tbody>
-                                            <tr class="text-center">
-                                            <td>1</td>
-                                            <td>School of Computing</td>
-                                            <td>
-                                                <a href="#" class="btn-xs tooltips" tooltip-placement="top" tooltip="Edit">
-                                                    <i class="fa fa-edit"></i>
-                                                </a>&nbsp;&nbsp;&nbsp;&nbsp;
-                                                <a href="#" onClick="return confirm('Are you sure you want to delete?')" class="btn-xs tooltips" tooltip-placement="top" tooltip="Remove">
-                                                <i class="fa fa-times fa fa-white"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        <tr class="text-center">
-                                            <td>2</td>
-                                            <td>School of Mechanical</td>
-                                            <td>
-                                                <a href="#" class="btn-xs tooltips" tooltip-placement="top" tooltip="Edit">
-                                                    <i class="fa fa-edit"></i>
-                                                </a>&nbsp;&nbsp;&nbsp;&nbsp;
-                                                <a href="#" onClick="return confirm('Are you sure you want to delete?')" class="btn-xs tooltips" tooltip-placement="top" tooltip="Remove">
-                                                <i class="fa fa-times fa fa-white"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                         <tr class="text-center">
-                                            <td>3</td>
-                                            <td>School of Electrical & Electronics</td>
-                                            <td>
-                                                <a href="#" class="btn-xs tooltips" tooltip-placement="top" tooltip="Edit">
-                                                    <i class="fa fa-edit"></i>
-                                                </a>&nbsp;&nbsp;&nbsp;&nbsp;
-                                                <a href="#" onClick="return confirm('Are you sure you want to delete?')" class="btn-xs tooltips" tooltip-placement="top" tooltip="Remove">
-                                                <i class="fa fa-times fa fa-white"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        <tr class="text-center">
-                                            <td>4</td>
-                                            <td>School of Bio and Mechanical</td>
-                                            <td>
-                                                <a href="#" class="btn-xs tooltips" tooltip-placement="top" tooltip="Edit">
-                                                    <i class="fa fa-edit"></i>
-                                                </a>&nbsp;&nbsp;&nbsp;&nbsp;
-                                                <a href="#" onClick="return confirm('Are you sure you want to delete?')" class="btn-xs tooltips" tooltip-placement="top" tooltip="Remove">
-                                                <i class="fa fa-times fa fa-white"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        <tr class="text-center">
-                                            <td>5</td>
-                                            <td>School of Building and Environment</td>
-                                            <td>
-                                                <a href="#" class="btn-xs tooltips" tooltip-placement="top" tooltip="Edit">
-                                                    <i class="fa fa-edit"></i>
-                                                </a>&nbsp;&nbsp;&nbsp;&nbsp;
-                                                <a href="#" onClick="return confirm('Are you sure you want to delete?')" class="btn-xs tooltips" tooltip-placement="top" tooltip="Remove">
-                                                <i class="fa fa-times fa fa-white"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        <tr class="text-center">
-                                            <td>6</td>
-                                            <td>School of Science and Humanities</td>
-                                            <td>
-                                                <a href="#" class="btn-xs tooltips" tooltip-placement="top" tooltip="Edit">
-                                                    <i class="fa fa-edit"></i>
-                                                </a>&nbsp;&nbsp;&nbsp;&nbsp;
-                                                <a href="#" onClick="return confirm('Are you sure you want to delete?')" class="btn-xs tooltips" tooltip-placement="top" tooltip="Remove">
-                                                <i class="fa fa-times fa fa-white"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        <tr class="text-center">
-                                            <td>7</td>
-                                            <td>School of Law</td>
-                                            <td>
-                                                <a href="#" class="btn-xs tooltips" tooltip-placement="top" tooltip="Edit">
-                                                    <i class="fa fa-edit"></i>
-                                                </a>&nbsp;&nbsp;&nbsp;&nbsp;
-                                                <a href="#" onClick="return confirm('Are you sure you want to delete?')" class="btn-xs tooltips" tooltip-placement="top" tooltip="Remove">
-                                                <i class="fa fa-times fa fa-white"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
+                                        <?php displaySchoolsAdmin(); ?>
                                     </tbody>
                                 </table>
                             </div>
