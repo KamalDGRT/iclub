@@ -6,6 +6,33 @@ $pass = '';
 // try to conncet to database
 $con = mysqli_connect($host,$user,$pass,$database);
 
+// escape string
+function e($val)
+{
+    global $con;
+    return mysqli_real_escape_string($con, trim($val));
+}
+
+function fetchUsingID($table,$id)
+{
+    global $con;
+    $id=(int)$id;
+    $query = "SELECT * FROM {$table} WHERE id={$id}";        
+    $result = mysqli_query($con,$query) or die(mysqli_error($con));
+    $row = mysqli_fetch_array($result);                       
+    return $row;
+}
+
+function fetchDegreeTypes()
+{
+    global $con;
+    $query = "SELECT deg_code,deg_type_name FROM degree_types";        
+    $result = mysqli_query($con,$query) or die(mysqli_error($con));
+    $row = mysqli_fetch_array($result);                       
+    return $row;
+}
+
+
 function fetchFrom($table,$regno)
 {
     global $con;
@@ -15,6 +42,20 @@ function fetchFrom($table,$regno)
     $row = mysqli_fetch_array($result);                       
     return $row;
 }
+
+function showDegreeTypes()
+{
+    global $con;    
+
+    $sel_query = "SELECT * FROM degree_types";
+    $result = mysqli_query($con, $sel_query);
+    
+    while ($row = mysqli_fetch_assoc($result)) {        
+        $content = "\n<option value=\"{$row["deg_code"]}\">{$row["deg_type_name"]}</option>";
+        echo $content;
+    }
+}
+
 
 function statusText($status)
 {
@@ -274,10 +315,7 @@ function displayDegreesAdmin()
     $content .=      "<td>".$row["s_degree"]."</td>";
     $content .=      "<td>".$row["deg_fullname"]."</td>";
     $content .=      "<td>";
-    $content .=          "<a href=\"#\" class=\"btn-xs tooltips\" tooltip-placement=\"top\" tooltip=\"Edit\">";
-    $content .=              "<i class=\"fa fa-eye\"></i>";
-    $content .=          "</a>&nbsp;";
-    $content .=          "<a href=\"#\" class=\"btn-xs tooltips\" tooltip-placement=\"top\" tooltip=\"Edit\">";
+    $content .=          "<a href=\"edit-degrees.php?included={$row['id']}\" class=\"btn-xs tooltips\" tooltip-placement=\"top\" tooltip=\"Edit\">";
     $content .=              "<i class=\"fa fa-edit\"></i>";
     $content .=          "</a>&nbsp;";
     $content .=          "<a href=\"#\" onClick=\"return confirm('Are you sure you want to delete?')\" class=\"btn-xs tooltips\" tooltip-placement=\"top\" tooltip=\"Remove\">";
