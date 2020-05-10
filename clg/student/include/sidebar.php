@@ -36,6 +36,12 @@
                 </div>
 			</li>
 
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" href="calculate-gpa.php">
+                    <i class="fas "></i><span>&nbsp;Calculate GPA</span>
+                </a>
+            </li>
+
             <hr class="sidebar-divider">
 
             <div class="sidebar-heading">

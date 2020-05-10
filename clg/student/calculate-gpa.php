@@ -35,39 +35,38 @@ include('include/functions.php');
                         </div>
                         <div class="card-body">
 
-                                <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
-                                    <table class="table dataTable my-0 black tableCell" id="gpatable">
-                                        <thead class="h6 myFont">
-                                            <tr class="text-center">
-                                                <th style="width:20%;"><strong>Subject Name</strong></th>
-                                                <th style="width:25%;"><strong>Marks Obtained</strong></th>
-                                                <th style="width:25%;"><strong>Total Marks</strong></th>
-                                                <th style="width:20%;"><strong>Credits</strong></th>
-                                                <th style="width:10%;"><strong>Remove</strong></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
+                            <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
+                                <table class="table dataTable my-0 black tableCell" id="gpatable">
+                                    <thead class="h6 myFont">
+                                        <tr class="text-center">
+                                            <th style="width:20%;"><strong>Subject Name</strong></th>
+                                            <th style="width:25%;"><strong>Marks Obtained</strong></th>
+                                            <th style="width:25%;"><strong>Total Marks</strong></th>
+                                            <th style="width:20%;"><strong>Credits</strong></th>
+                                            <th style="width:10%;"><strong>Remove</strong></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
 
-                                            <tr>
-                                                <td><input class="form-control" type="text" name="" id=""></td>
-                                                <td><input class="form-control" type="text" name="" id=""></td>
-                                                <td><input class="form-control" type="text" name="" id=""></td>
-                                                <td><input class="form-control" type="text" name="" id=""></td>
-                                                <td><button id="remove_subject" class="btn btn-danger btn-xl text-center form-control bg-gradient-danger">Remove</button></td>
-                                            </tr>
+                                        <tr>
+                                            <td><input class="form-control" type="text" id=""></td>
+                                            <td><input class="input-marks-obtained" type="number" id="tinput" oninput="calculateGPA()" ></td>
+                                            <td><input class="input-marks-total" type="number" id="tinput"></td>
+                                            <td><input class="input-credits" type="number" id="tinput"></td>
+                                            <td><button id="remove_subject" class="btn btn-danger btn-xl text-center form-control bg-gradient-danger">Remove</button></td>
+                                        </tr>
 
-                                        </tbody>
-                                    </table>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <span id="reportgpa" style="font-size:12px;"></span>
+                            <div class="form-row form-group">
+                                <div class="col-lg-2">
                                 </div>
-
-                                <div class="form-row form-group">
-                                    <div class="col-lg-2">
-                                    </div>
-                                    <div class="col-lg-8">
-                                        <button class="btn btn-success btn-xl form-control bg-gradient-success" id="add_subject">Add a new Subject</button>
-                                    </div>
+                                <div class="col-lg-8">
+                                    <button class="btn btn-success btn-xl form-control bg-gradient-success" id="add_subject">Add a new Subject</button>
                                 </div>
-
+                            </div>
 
                         </div>
                     </div>
@@ -87,17 +86,40 @@ include('include/functions.php');
             $("#add_subject").click(function() {
                 $("#gpatable").append("<tr>" +
                     "<td><input class=\"form-control\" type=\"text\" name=\"\" id=\"\"></td>" +
-                    "<td><input class=\"form-control\" type=\"text\" name=\"\" id=\"\"></td>" +
-                    "<td><input class=\"form-control\" type=\"text\" name=\"\" id=\"\"></td>" +
-                    "<td><input class=\"form-control\" type=\"text\" name=\"\" id=\"\"></td>" +
+                    "<td><input class=\"input-marks-obtained\" type=\"text\" name=\"\" id=\"tinput\"></td>" +
+                    "<td><input class=\"input-marks-total\" type=\"text\" name=\"\" id=\"tinput\"></td>" +
+                    "<td><input class=\"input-credits\" type=\"text\" name=\"\" id=\"tinput\"></td>" +
                     "<td><button id=\"remove_subject\" class=\"btn btn-danger btn-xl text-center form-control bg-gradient-danger\">Remove</button></td>" +
                     "</tr>");
+                    calculateGPA();
             });
 
             $("#gpatable").on("click", "#remove_subject", function() {
                 $(this).closest("tr").remove();
+                calculateGPA();
             });
 
+            $("#gpatable").on("input", "#tinput", function() {
+                calculateGPA();
+            });
+
+
+
+            function calculateGPA(){
+            var cls = document.getElementById("gpatable").getElementsByTagName("td");
+            var sum = 0;
+            var sum2 = 0;
+            for (var i = 0; i < cls.length; i++) {
+                if (cls[i].className == "input-marks-obtained") {
+                    sum += isNaN(cls[i].innerHTML) ? 0 : parseInt(cls[i].innerHTML);
+                }
+                if (cls[i].className == "input-marks-total") {
+                    sum2 += isNaN(cls[i].innerHTML) ? 0 : parseInt(cls[i].innerHTML);
+                }
+            }
+            var resultstr = "total marks obtained : " + sum + " total marks : " + sum2 + " cls.length : " +  cls.length;
+            $("#reportgpa").html(resultstr);
+        }
         });
     </script>
 
