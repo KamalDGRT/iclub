@@ -50,9 +50,9 @@ include('include/functions.php');
 
                                         <tr>
                                             <td><input class="form-control" type="text" id=""></td>
-                                            <td><input class="form-control input-marks-obtained" type="number" id="m_obtained" oninput="calculateGPA()"></td>
-                                            <td><input class="form-control input-marks-total" type="number" id="m_total" oninput="calculateGPA()"></td>
-                                            <td><input class="form-control input-credits" type="number" id="s_credits" oninput="calculateGPA()"></td>
+                                            <td><input class="form-control input-marks-obtained" type="number" id="m_obtained"></td>
+                                            <td><input class="form-control input-marks-total" type="number" id="m_total"></td>
+                                            <td><input class="form-control input-credits" type="number" id="s_credits"></td>
                                             <td><button id="remove_subject" class="btn btn-danger btn-xl text-center form-control bg-gradient-danger">Remove</button></td>
                                         </tr>
 
@@ -86,9 +86,9 @@ include('include/functions.php');
             $("#add_subject").click(function() {
                 $("#gpatable").append("<tr>" +
                     "<td><input class=\"form-control\" type=\"text\" name=\"\" id=\"\"></td>" +
-                    "<td><input class=\"form-control input-marks-obtained\" type=\"number\" name=\"\" id=\"m_obtained\"  oninput=\"calculateGPA()\"></td>" +
-                    "<td><input class=\"form-control input-marks-total\" type=\"number\" name=\"\" id=\"m_total\" oninput=\"calculateGPA()\"></td>" +
-                    "<td><input class=\"form-control input-credits\" type=\"number\" name=\"\" id=\"s_credits\" oninput=\"calculateGPA()\"></td>" +
+                    "<td class=\"input-marks-obtained\"><input class=\"form-control\" type=\"\" name=\"\" id=\"m_obtained\"></td>" +
+                    "<td class=\"input-marks-total\"><input class=\"form-control\" type=\"number\" name=\"\" id=\"m_total\"></td>" +
+                    "<td class=\"input-credits\"><input class=\"form-control\" type=\"number\" name=\"\" id=\"s_credits\"></td>" +
                     "<td><button id=\"remove_subject\" class=\"btn btn-danger btn-xl text-center form-control bg-gradient-danger\">Remove</button></td>" +
                     "</tr>");
                 calculateGPA();
@@ -100,17 +100,21 @@ include('include/functions.php');
             });
 
             function calculateGPA() {
-
-                var cls = document.getElementById("m_obtained").getElementsByTagName("td");
-                var x = document.getElementById("m_total").getElementsByTagName("td");
-                var y = document.getElementById("s_credits").getElementsByTagName("td");
-                console.log(cls.length);
-                console.log(x.length);
-                console.log(y.length);
+                var cls = document.getElementById("gpatable").getElementsByTagName("td");
+                
                 var sumx = 0,
                     sumy = 0;
-                
-                var resultstr = "total marks obtained : " + sumx + " total marks : " + sumy + " x.length : " + x.length + " y.length : " + y.length + " cls.length : " + cls.length;
+                var x;
+                for (var i = 0; i <cls.length; i++) {
+                    
+                    if(cls[i].className == "input-marks-obtained"){
+                        //sumx += isNaN() ? 0 : parseInt(cls[i].innerHTML);
+                        
+                        sumx += 1;
+                    }
+                    
+                }
+                var resultstr = "total marks obtained : " + sumx + " total marks : " + sumy + " cls.length : " + cls.length + " x.value : " + x;
                 $("#reportgpa").html(resultstr);
             }
         });
