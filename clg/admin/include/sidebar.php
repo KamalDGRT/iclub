@@ -67,6 +67,21 @@
           </div>
         </div>
       </li>
+
+      <li class="nav-item" role="presentation">
+        <div>
+          <a class="btn btn-link nav-link" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-4" href="#collapse-4" role="button">
+            <i class="fas fa-sticky-note fa-2x"></i>&nbsp;<span>Online Classroom</span>
+          </a>
+          <div class="collapse" id="collapse-4">
+            <div class="bg-white border rounded py-2 collapse-inner">
+              <a class="collapse-item" href="add-online-classroom.php">Add Classroom</a>
+              <a class="collapse-item" href="view-online-classrooms.php">View Classrooms</a>
+            </div>
+          </div>
+        </div>
+      </li>
+
       <hr class="sidebar-divider">
 
       <div class="sidebar-heading">
