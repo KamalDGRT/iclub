@@ -42,9 +42,10 @@ _A good web hosting platform to host this portal._
 ___
 
 ## Features proposed in the next update:
+- [x] A GPA calculator for the students.
+- [x] Admin can manage online classrooms.
 - [ ] Students will be getting announcement which they can keep track of.
 - [ ] Admin will be able to set the timetable for the whole college and manage it.
-- [x] A GPA calculator for the students.
 - [ ] Adding a new user role of teacher / staff
 - [ ] Staff will be entering subject mark of students and Students can view it directly and hence GPA will be evaluated for any particular exam automatically.
 - [ ] Staff will be taking hourly attendance which in turn will help student keep track of his/her attendance percentage.
