@@ -1,0 +1,18 @@
+label {
+    margin: 15px 15px;
+}
+
+.form-control {
+    border-radius: 2px;    
+}
+
+.black {
+    color:black;    
+}
+
+td {
+    display: table-cell;    
+    padding: 10px;    
+    vertical-align: middle;
+    white-space:nowrap;
+}
