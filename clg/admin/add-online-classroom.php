@@ -14,7 +14,7 @@ include('include/functions.php');
     <title> Admin | Add Online Classroom</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
-    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">    
 </head>
 
 <body id="page-top">
@@ -39,7 +39,19 @@ include('include/functions.php');
                                         <label class="col-form-label" for=""><strong>Batch :</strong></label>
                                     </div>
                                     <div class="col-md-6 input-column">
-                                        <input class="form-control" type="date" name="date">
+                                        <select class="form-control">
+                                        <?php 
+                                        global $con;    
+
+                                        $sel_query = "SELECT * FROM batches";
+                                        $result = mysqli_query($con, $sel_query);
+                                        
+                                        while ($row = mysqli_fetch_assoc($result)) {        
+                                            $content = "<option value=\"".$row["id"]."\">".$row["batch"]."</option>\n";
+                                            echo $content;
+                                        }
+                                        ?>
+                                        </select>
                                     </div>
                                 </div>
 
@@ -128,6 +140,7 @@ include('include/functions.php');
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/jquery.easing.js"></script>
     <script src="assets/js/theme.js"></script>
+
 </body>
 
 </html>
