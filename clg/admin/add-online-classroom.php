@@ -14,7 +14,12 @@ include('include/functions.php');
     <title> Admin | Add Online Classroom</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
-    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">    
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+    <style>
+        option{
+            height: 50px;
+        }
+    </style>    
 </head>
 
 <body id="page-top">
@@ -36,22 +41,10 @@ include('include/functions.php');
 
                                 <div class="form-row form-group">
                                     <div class="col-md-6 label-column">
-                                        <label class="col-form-label" for=""><strong>Batch :</strong></label>
+                                        <label class="col-form-label" for="batches"><strong>Batch :</strong></label>
                                     </div>
                                     <div class="col-md-6 input-column">
-                                        <select class="form-control">
-                                        <?php 
-                                        global $con;    
-
-                                        $sel_query = "SELECT * FROM batches";
-                                        $result = mysqli_query($con, $sel_query);
-                                        
-                                        while ($row = mysqli_fetch_assoc($result)) {        
-                                            $content = "<option value=\"".$row["id"]."\">".$row["batch"]."</option>\n";
-                                            echo $content;
-                                        }
-                                        ?>
-                                        </select>
+                                        <?php showBatches("batches"); ?>
                                     </div>
                                 </div>
 
