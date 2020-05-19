@@ -67,7 +67,7 @@ if (isset($_POST['add_degree'])) {
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <input type="text" name="degree_type" class="form-control" placeholder="Degree Type">
+                                            <?php showDegreeTypes("degree_type"); ?>
                                         </div>
                                     </div>
                                     <div class="col-md-3">

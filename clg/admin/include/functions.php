@@ -43,17 +43,22 @@ function fetchFrom($table, $regno)
     return $row;
 }
 
-function showDegreeTypes()
+function showDegreeTypes($name,$extra="")
 {
     global $con;
 
     $sel_query = "SELECT * FROM degree_types";
-    $result = mysqli_query($con, $sel_query);
+    $result = mysqli_query($con, $sel_query) or die(mysqli_error($con));
+
+    echo "<select class=\"form-control\" name=\"" . $name . "\" ".$extra.">";
+    echo "<option>--&nbsp;Select&nbsp;Degree&nbsp;Type--</option>\n";
 
     while ($row = mysqli_fetch_assoc($result)) {
         $content = "\n<option value=\"{$row["deg_code"]}\">{$row["deg_type_name"]}</option>";
         echo $content;
     }
+
+    echo "</select>\n";
 }
 
 
@@ -375,7 +380,7 @@ function showBatches($name)
     $sel_query = "SELECT * FROM batches";
     $result = mysqli_query($con, $sel_query);
     echo "<select class=\"form-control\" name=\"" . $name . "\">";
-    echo "<option>--&nbsp;Select&nbsp;--</option>\n";
+    echo "<option>--&nbsp;Select&nbsp;Batch--</option>\n";
 
     while ($row = mysqli_fetch_assoc($result)) {
         $content = "<option value=\"" . $row["id"] . "\">" . $row["batch"] . "</option>\n";
