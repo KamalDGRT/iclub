@@ -77,9 +77,9 @@ if (isset($_POST['add_degree'])) {
                                     </div>
                                 </div>
                             </form>
+                            <a href="manage-degree-types.php">Manage Degree Types</a>
                         </div>
                     </div>
-                    <a href="manage-degree-types.php">Manage Degree Types</a>
                 </div> <br>
 
                 <div class="container-fluid">
