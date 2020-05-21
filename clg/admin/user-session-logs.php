@@ -36,7 +36,7 @@ include('include/functions.php');
                         <div class="card-body">
 
                             <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
-                                <table class="table dataTable my-0" id="userlog">
+                                <table class="table dataTable my-0 black" id="userlog">
                                     <thead>
                                         <?php displayTableHeadUserLogs(); ?>
                                     </thead>
