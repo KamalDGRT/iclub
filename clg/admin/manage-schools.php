@@ -13,7 +13,7 @@ if (isset($_POST['add_school'])) {
     $schname = $_POST['schname'];
 
     date_default_timezone_set('Asia/Kolkata');
-    $ldate=date( 'Y-m-d H:i:s');
+    $ldate = date('Y-m-d H:i:s');
 
     $query = "INSERT INTO s_schools (s_code,sch_name,creation_date) VALUES ('$shcode','$schname','$ldate')";
 
@@ -63,17 +63,19 @@ if (isset($_POST['add_school'])) {
                                 <div class="form-row">
                                     <div class="col-md-2">
                                         <div class="form-group">
-                                            <input type="text" name="shcode" class="form-control" placeholder="Short Code" required>
+                                            <input type="text" class="form-control" name="shcode" id="shcode" onBlur="shortCodeAvailability()" placeholder="Short Code" required>                                            
+                                            <span id="short-code-status" style="font-size:12px;"></span>
                                         </div>
                                     </div>
                                     <div class="col-md-5">
                                         <div class="form-group">
-                                            <input type="text" name="schname" class="form-control" placeholder="Enter a School Name" required>
+                                            <input type="text" class="form-control" name="schname" id="schname" onBlur="schoolNameAvailability()" placeholder="Enter a School Name" required>                                            
+                                            <span id="school-name-status" style="font-size:12px;"></span>
                                         </div>
                                     </div>
                                     <div class="col-md-5">
                                         <div class="form-group">
-                                            <button class="btn btn-primary btn-xl form-control bg-gradient-primary" type="submit" name="add_school">Add&nbsp;School</button>
+                                            <button class="btn btn-primary btn-xl form-control bg-gradient-primary" type="submit" name="add_school" id="submit">Add&nbsp;School</button>
                                         </div>
                                     </div>
                                 </div>
@@ -115,6 +117,36 @@ if (isset($_POST['add_school'])) {
     <script src="assets/js/jquery.dataTables.min.js"></script>
     <script src="assets/js/dataTables.bootstrap.min.js"></script>
     <script src="assets/js/theme.js"></script>
+    <script>
+
+        function shortCodeAvailability() {
+            
+            jQuery.ajax({
+                url: "check-shcode-availability.php",
+                data: 'shcode=' + $("#shcode").val(),
+                type: "POST",
+                success: function(data) {
+                    $("#short-code-status").html(data);
+                },
+                error: function() {}
+            });
+        }
+
+        function schoolNameAvailability() {
+            
+            jQuery.ajax({
+                url: "check-shcode-availability.php",
+                data: 'schname=' + $("#schname").val(),
+                type: "POST",
+                success: function(data) {
+                    $("#school-name-status").html(data);
+                },
+                error: function() {}
+            });
+        }
+
+    </script>
+
 </body>
 
 </html>
